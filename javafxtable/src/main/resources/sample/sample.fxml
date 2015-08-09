@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.Button?>
+<AnchorPane minHeight="340.0" minWidth="380.0" prefWidth="380.0" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="sample.Controller">
+    <children>
+        <TableView fx:id="historyTable" editable="true" AnchorPane.bottomAnchor="32.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0"
+                   AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="typeCol" editable="true" maxWidth="90.0" minWidth="90.0" resizable="false" style="-fx-font-size: 10px" text="Type">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="type"/>
+                    </cellValueFactory>
+                </TableColumn>
+
+                <TableColumn fx:id="timeCol" editable="true" maxWidth="50.0" minWidth="50.0" resizable="false" sortable="false" style="-fx-font-size: 10px"
+                             text="Time">
+                    <cellValueFactory>
+                        <PropertyValueFactory property="time"/>
+                    </cellValueFactory>
+                </TableColumn>
+                <TableColumn fx:id="descCol" editable="true" minWidth="235.0" prefWidth="235.0" style="-fx-font-size: 10px" text="Description">
+
+                    <cellValueFactory>
+                        <PropertyValueFactory property="desc"/>
+                    </cellValueFactory>
+
+                </TableColumn>
+            </columns>
+        </TableView>
+        <Button onAction="#addRow" AnchorPane.bottomAnchor="0" text="Dodaj" />
+        <Button onAction="#saveTable" AnchorPane.bottomAnchor="0" AnchorPane.rightAnchor="0" text="Save" />
+    </children>
+</AnchorPane>
